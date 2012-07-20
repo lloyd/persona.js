@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World!</title>
+</head>
+<body>
+ Here will be shit rendered on your server.  either a login or logout button will be
+ rendered. 
+</body>
+<script src="persona.js"></script>
+<script>
+  Persona.setup({
+    login_url: '/login',
+    login_button: "#login",
+    logout_url: '/logout',  
+    logout_button: "#logout"
+  });
+</script>
+</html>
