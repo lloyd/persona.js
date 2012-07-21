@@ -45,7 +45,12 @@ window.PersonaJS = (function() {
     } else {
       // the user is logged in
       watch_options.onlogout = function() {
-        window.location = options.logout.path;
+        // create a form, submit it.
+        var f = document.createElement('form');
+        f.action = options.logout.path;
+        f.method = "POST";
+        document.body.appendChild(f);
+        f.submit();
       };
       watch_options.onlogin = function() {};
       loNode.onclick = function() { navigator.id.logout(); };
