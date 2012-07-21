@@ -47,7 +47,7 @@ window.PersonaJS = (function() {
       watch_options.onlogout = function() {
         window.location = options.logout.path;
       };
-
+      watch_options.onlogin = function() {};
       loNode.onclick = function() { navigator.id.logout(); };
     }
     navigator.id.watch(watch_options);
