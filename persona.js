@@ -28,7 +28,17 @@ window.PersonaJS = (function() {
       // the user is logged out
       watch_options.loggedInUser = null;
       watch_options.onlogin = function(assertion) {
-        // post to options.login.path
+        // create a form, submit it.
+        var f = document.createElement('form');
+        f.action = options.login.path;
+        f.method = "POST";
+        var a = document.createElement('input');
+        a.type = "hidden";
+        a.value = assertion;
+        a.name = "assertion";
+        f.appendChild(a);
+        document.body.appendChild(f);
+        f.submit();
       };
       watch_options.onlogout = function() {};
       liNode.onclick = function() { navigator.id.request() };
@@ -38,8 +48,6 @@ window.PersonaJS = (function() {
         window.location = options.logout.path;
       };
     }
-
     navigator.id.watch(watch_options);
-
   };
 })();
