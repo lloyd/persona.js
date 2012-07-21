@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World!</title>
+</head>
+<body>
+  <!-- This will be dynamically rendered by your server.  Your server can either
+       output HTML with `persona_login` tags if the user is logged out, or
+       `persona_logout` tags if the user is logged in -->
+  <div class="persona_login">login</div>
+</body>
+<!-- you must include include.js -->
+<script src="https://login.persona.org/include.js"></script>
+<!-- and persona.js (but at least you can minify this with your other javascript content) -->
+<script src="persona.js"></script>
+<script>
+  /* invoke the PersonaJS function to set up persona! */
+  PersonaJS({
+    login: {
+      target: "/login",          // the path users will be sent to when they logout
+      selector: ".persona_login" // a css selector for your login button
+    },
+    logout: {
+      target: "/logout",          // By the way, these values are the default values,
+      selector: ".persona_logout" // you can leave them off if you like the defaults.
+    }
+  });
+</script>
+</html>

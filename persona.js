@@ -44,6 +44,7 @@ window.PersonaJS = (function() {
       liNode.onclick = function() { navigator.id.request() };
     } else {
       // the user is logged in
+      watch_options.loggedInUser = options.loggedInUser;
       watch_options.onlogout = function() {
         // create a form, submit it.
         var f = document.createElement('form');
