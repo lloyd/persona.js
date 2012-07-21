@@ -12,8 +12,8 @@ window.PersonaJS = (function() {
 
     var watch_options = {};
 
-    var liNode = document.querySelect(options.login.select);
-    var loNode = document.querySelect(options.logout.select);
+    var liNode = document.querySelector(options.login.select);
+    var loNode = document.querySelector(options.logout.select);
     if (!liNode && !loNode) {
       throw "Persona login disabled.  You must have either a '" +
         options.logout.select + "' or '" + options.logout.select +
@@ -27,14 +27,16 @@ window.PersonaJS = (function() {
     if (liNode) {
       // the user is logged out
       watch_options.loggedInUser = null;
-      watch_options.onlogin(function(assertion) {
+      watch_options.onlogin = function(assertion) {
         // post to options.login.path
-      });
+      };
+      watch_options.onlogout = function() {};
+      liNode.onclick = function() { navigator.id.request() };
     } else {
       // the user is logged in
-      watch_options.onlogout(function() {
+      watch_options.onlogout = function() {
         window.location = options.logout.path;
-      });
+      };
     }
 
     navigator.id.watch(watch_options);
