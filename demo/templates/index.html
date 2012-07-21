@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Mozilla Persona Example</title>
+  </head>
+  <body>
+    <p>You are currently logged in as {{ session.email or "Nobody" }}</p>
+
+    {% if session.email %}
+      <p>You can <a href="#" id="signout">Sign Out</a></p>
+    {% else %}
+      <p>You can <a href="#" id="signin">Sign In</a></p>
+    {% endif %}
+
+    <script type="text/javascript" src="https://login.persona.org/include.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/lloyd/persona.js/master/persona.js"></script>
+    <script type="text/javascript">
+      PersonaJS({
+        login: { target: '/login', select: '#signin' },
+        logout: { target: '/logout', select: '#signout' },
+      });
+    </script>
+  </body>
+</html>
