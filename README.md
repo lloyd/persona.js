@@ -6,7 +6,7 @@
     <script src="https://raw.github.com/lloyd/persona.js/master/persona.min.js"></script>
     <script> PersonaJS(); </script>
     
-NOTE: Wanna bundle persona.js with your own javascript resources and bundle it all up?  Do it!  
+NOTE: Wanna bundle persona.js with your own javascript resources and minify it all together?  Do it!  
 
 ### #2 - Add a classes to your login / logout links
 
