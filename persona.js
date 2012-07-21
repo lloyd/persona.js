@@ -41,7 +41,9 @@ window.PersonaJS = (function() {
         f.submit();
       };
       watch_options.onlogout = function() {};
-      liNode.onclick = function() { navigator.id.request() };
+      liNode.onclick = function() {
+        navigator.id.request(options);
+      };
     } else {
       // the user is logged in
       watch_options.loggedInUser = options.loggedInUser;

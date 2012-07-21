@@ -29,6 +29,7 @@ When a user logs out, we'll post to `/logout`.
 don't like the class names or paths we've chosen as defaults?
 
     PersonaJS({
+      siteName: "My Awesome Site",
       login: { target: '/login', select: '#signin' },
       logout: { target: '/logout', select: '#signout' },
     });
