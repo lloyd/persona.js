@@ -32,8 +32,8 @@ don't like the class names or paths we've chosen as defaults?
 
     PersonaJS({
       siteName: "My Awesome Site",
-      login: { target: '/login', select: '#signin' },
-      logout: { target: '/logout', select: '#signout' }
+      login: { path: '/login', select: '#signin' },
+      logout: { path: '/logout', select: '#signout' }
     });
 
 ### #5
